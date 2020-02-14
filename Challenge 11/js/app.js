@@ -47,9 +47,9 @@ function clearInput() {
 }
 // TODO: get id and return value
 function getTodoFromId(id) {
-  for(let item of todoItems){
-    if(item.id === id){
-      return item;
+  for(let item of todoItems) {
+    if(item.id === id) {
+      return  item;
     }
   }
   return null;
@@ -82,3 +82,13 @@ function updateList() {
 function saveJson() {
    localStorage.setItem("TODO", JSON.stringify(todoItems));
 }
+
+// TODO: create event click and get job attributes value 
+document.addEventListener('click', event => {
+  const element = event.target;
+  const completeJob = element.attributes.job.value;
+  
+    console.log(completeJob);
+
+});
+  
