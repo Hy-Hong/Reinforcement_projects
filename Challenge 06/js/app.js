@@ -15,10 +15,9 @@ const options = {
 const today = new Date();
 DATE_HTML.innerHTML = today.toLocaleString("en-US", options);
 
-// TODO: create array name : todoItems is empty
 let todoItems = [];
-// TODO: create id with value 0
 let id = 0;
+
 
 document.addEventListener("keyup", event => {
 	if (event.code === "Enter") {
@@ -26,7 +25,7 @@ document.addEventListener("keyup", event => {
 
     if (inputValue != null) {
       // 1. add the todo
-      addTodo(inputValue);
+      addTodo(inputValue)
       // 2.  Clear input
       clearInput();
     }
@@ -38,20 +37,20 @@ function clearInput() {
 }
 
 function addTodo(todoName) {
-  // TODO: push new valueto array todoItems with name , id, done
-  todoItems.push({name: todoName, id: id, done: false});
-  // console array
-  console.log(todoItems);
-  // TODO: call updateList function
-  updateList();
+	todoItems.push({name: todoName, id : id, done: false});
+	updateList();
 }
 
 function updateList() {
   let code = "";
-  // TODO: loop get value from array 
-  for(let item of todoItems){
-    console.log(item);
+  for(let item of todoItems) {
+	// TODO
+    code += `<li class="item">
+        <i class="fa fa-circle-thin co" job="complete" id=""></i>
+        <p class="text">${item.name}</p>
+        <i class="fa fa-trash-o de" job="delete" id=""></i>
+    </li>`;
+  // TODO: display to html
+    LIST_HTML.innerHTML = code; 
   }
-  ++id;
-  // console it.
 }
