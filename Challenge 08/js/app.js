@@ -37,7 +37,13 @@ function clearInput() {
 }
 
 function addTodo(todoName) {
-	todoItems.push({name: todoName, id : id, done: true});
+  //push values to array
+  todoItems.push({name: todoName, id : id, done: false});
+  //Increment id
+  id++;
+  //save JSON
+  saveJson();
+  //update html
   updateList();
 }
 
@@ -53,4 +59,8 @@ function updateList() {
   // TODO: display to html
     LIST_HTML.innerHTML = code; 
   }
+}
+
+function saveJson(){
+  localStorage.setItem("todoList", JSON.stringify(todoItems));
 }
