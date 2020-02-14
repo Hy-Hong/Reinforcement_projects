@@ -17,15 +17,15 @@ DATE_HTML.innerHTML = today.toLocaleString("en-US", options);
 
 let todoItems = [];
 let id = 0;
-// TODO: get value from local storage
-let data = localStorage.getItem("todoList");
-// TODO: check if data not empty
-if(data){
-  // TODO: covert to json
+let data = localStorage.getItem("TODO");
+if (data) {
+  // 1. Update the list of items
   todoItems = JSON.parse(data);
-  //TODO: update current id
+
+  // 2. Update the current id
   id = todoItems.length;
-  // TODO: update HTML
+
+  // 3. refresh the view
   updateList();
 }
 
@@ -44,6 +44,15 @@ document.addEventListener("keyup", event => {
 
 function clearInput() {
 	INPUT_HTML.value = "";
+}
+// TODO: get id and return value
+function getTodoFromId(id) {
+  for(let item of todoItems){
+    if(item.id === id){
+      return item;
+    }
+  }
+  return null;
 }
 
 function addTodo(todoName) {
