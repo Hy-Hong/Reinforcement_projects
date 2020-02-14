@@ -20,14 +20,13 @@ let todoItems = [];
 // TODO: create id with value 0
 let id = 0;
 
-
 document.addEventListener("keyup", event => {
 	if (event.code === "Enter") {
     const inputValue = INPUT_HTML.value;
 
     if (inputValue != null) {
       // 1. add the todo
-	  addTodo(inputValue);
+      addTodo(inputValue);
       // 2.  Clear input
       clearInput();
     }
@@ -40,7 +39,19 @@ function clearInput() {
 
 function addTodo(todoName) {
   // TODO: push new valueto array todoItems with name , id, done
-  todoItems.push({naem: todoName, id: id, done: false});
+  todoItems.push({name: todoName, id: id, done: false});
   // console array
   console.log(todoItems);
+  // TODO: call updateList function
+  updateList();
+}
+
+function updateList() {
+  let code = "";
+  // TODO: loop get value from array 
+  for(let item of todoItems){
+    console.log(item);
+  }
+  ++id;
+  // console it.
 }
