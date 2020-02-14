@@ -57,7 +57,7 @@ function getTodoFromId(id) {
 
 function addTodo(todoName) {
   //1. push value to array
-  todoItems.push({name: todoName, id : id, done: false});
+  todoItems.push({name: todoName, id : id, done: false, trash});
   //2. Increment id
   id++;
   //3. save JSON
@@ -83,12 +83,18 @@ function saveJson() {
    localStorage.setItem("TODO", JSON.stringify(todoItems));
 }
 
-// TODO: create event click and get job attributes value 
-document.addEventListener('click', event => {
-  const element = event.target;
-  const completeJob = element.attributes.job.value;
-  
-    console.log(completeJob);
+document.addEventListener("click", function(event) {
+  const elementJob = event.target.attributes.job.value;
+  // TODO: get id 
+  const elementId = parseInt(event.target.id);
+  console.log(elementId);
+  // TODO: check the codition if elementJob === "complete" console something complete
+  if(elementJob === "complete"){
+    console.log("My job has been complete");
+  }
+  // however if elementJob === "delete" console something delete
+  else if(elementJob === "delete"){
+    console.log("This job has been delete");
+  }
 
 });
-  
