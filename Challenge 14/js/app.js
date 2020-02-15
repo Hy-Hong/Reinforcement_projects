@@ -61,7 +61,7 @@ function addTodo(todoName) {
   //2. Increment id
   id++;
   //3. save JSON
-  saveJson() 
+  saveJson();
   // 4. update html
 	updateList();
 }
@@ -95,15 +95,21 @@ document.addEventListener("click", function(event) {
 });
 
 
-// create function removeToDo() 
-// paramenter is id
-function removeToDo(id){
-  
-}
+function completeToDo(id) {
+  // TODO: todo via its id
+  const todo = getTodoFromId(id);
+  // check if todo != nulll
+  if(todo != null){
+    // change status todo of done
+    todo.done = !todo.done;
+  }
+  // save JSON
+  saveJson();
+  // update html
+  updateList();
+}	
 
-// create function completeToDo()
-// paramenter is id
-function completeToDo(id){
-
+function removeToDo(id) {
+	
 }
 
