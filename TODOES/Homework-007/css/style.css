@@ -1,0 +1,107 @@
+
+body{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* ------------ container ------------ */
+.container{
+    padding:20px;
+    width:380px;
+    margin: 0 auto;
+}
+
+/* ------------ header ------------ */
+.header{
+    width: 404px;
+    height:90px;
+    background-color: teal;
+    position: relative;
+}
+
+.add-to-do input{
+    position: absolute;
+    top: 118px;
+    height: 35px;
+    width: 400px;
+    background-color: transparent;
+    border: 2px solid rgb(78, 196, 196);
+    font-size: 20px;
+}
+/* ------------ content ------------ */
+.content{
+    margin-top: 40px;
+    width:403px;
+    overflow: auto;
+    background: orange;
+}
+
+#date{
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    color: #FFF;
+    font-size: 27px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.content::-webkit-scrollbar { 
+    display: none; 
+}
+.content ul{
+    margin:30px;
+    color: purple;
+}
+.item{
+    width:380px;
+    height: 30px;
+    min-height: 30px;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item p.text{
+    position: absolute;
+    margin:0px;
+    font-size: 18px;
+    left:20px;
+    top:0px;
+    color: white;
+    max-width:285px;
+}
+
+::placeholder{
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
