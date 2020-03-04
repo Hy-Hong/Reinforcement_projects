@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css"/>  
+  <link rel="stylesheet" href="css/bootstrap.min.css"/> 
+  <script src="js/popper.min.js"></script>
+</head>
+
+<body>
+  <!-- A horizontal navbar that becomes vertical on small screens-->
+  <nav class=" bg-dark navbar-dark row">
+    <!-- Brand -->
+  
+    <a class="navbar-toggler" href="#"><img class="img-fluid" style="height:50px; width:auto;" src="images/icon.png"></a>
+  
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#final">
+      <span class="navbar-toggler-icon right"></span>
+    </button>
+  
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="final">
+      <ul class="navbar-collapse">
+        <li class="nav-item">
+          <a class="nav-link" href="">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 2</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="row justify-content-center" style="background-color:royalblue;padding:20px;">
+    <h2 class="text-white">Please click to Signup</h2>
+</div>
+
+  <!-- Nav Tab -->
+  <div class="row mt-2">
+    <div class="col-lg-12">
+      <ul class="navbar-toggler" id="final" style="display: flex;">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="collapse" href="#home">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#home1">User Info</a>
+          </li>
+          
+      </ul>
+        
+      <!-- Tab panes -->
+        <div class="navbar-toggler">
+          <div class=" container active mt-5" id="home">
+              <div class="container mt-5">
+            <!-- First tab -->
+              <h1>Sign Up</h1>
+              <br>
+            
+              <!--form-->
+              <form action="#" class="container" id="frmsub" style="background-color:beige; padding:15px;">
+               
+                <div class=" row">
+                  <label for="lbl1" class="col-lg-2">Name</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="Enter Name" required>
+                  </div>
+                </div>
+              
+                <div class=" row">
+                  <label for="lbl2" class="col-lg-2">Email</label>
+                  <div class="col-lg-10">
+                      <input type="email" class="form-control" placeholder="Enter Email" required>
+                    </div>
+                  </div>
+              
+                <div class=" row">
+                  <label for="lbl3" class="col-lg-2">Passwolrd</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control" placeholder="Enter Password" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-control-input" type="radio" name="male" >M
+                    </label>
+                  </div>
+                  <div class="form-check">
+                      <label class="form-check-label">
+                          <input class="form-control-input" type="radio" name="female">F 
+                      </label>
+                  </div>
+                  
+              <!--button submit-->
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-info col-lg-3">Signup</button> </div>
+                  
+              <!-- button modal -->
+                    <div class="row justify-content-center"> <button  type="button" class="btn btn-danger col-lg-3 mt-2" data-toggle="modal" data-target="#myModal">
+                            modal
+                        </button>
+                    </div>
+              
+              <!-- modal dialog -->
+              <div class ="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">  
+                      <h4 class="modal-header">Click here to close
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </h4>
+                      <div class="modal-body">
+                        Hello...here is the practice for you!  
+                      </div>
+                       <div class="modal-footer">
+                       </div>
+              
+                  </div>
+                </div>
+              </div>
+            </form>
+
+              
+            <!---->
+        </div>
+      </div>
+        
+        <!-- Second tab -->
+          <div class="tab-pane container fade mt-5"  id = "home1"style="width:70%">
+            <div class="alert alert-info">
+               <h2>It will come <strong>soon...!</strong></h2>
+            </div>  
+          </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+   </body>
+</html>
