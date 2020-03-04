@@ -8,14 +8,13 @@
   const addInput = document.querySelector("#add");
   const filterInput = document.querySelector("#filter");
   const listElement = document.querySelector("ul");
-
 /**
  * @Noted you can add your code more with addEventListener with button or anything...
  */
   addButtonClick.addEventListener("click", () => {
     setActive(addButtonClick);
     clearActive(filterButtonClick);
-    randomColor();
+    randomImage();
 
     setVisible(addInput, true);
     setVisible(filterInput, false);
@@ -23,7 +22,7 @@
   filterButtonClick.addEventListener("click", () => {
     setActive(filterButtonClick);
     clearActive(addButtonClick);
-    randomColor();
+    randomImage();
 
     setVisible(filterInput, true);
     setVisible(addInput, false);
@@ -43,7 +42,7 @@
   * @description this function use for clear active color on element
   */
  // code here...
-  function clearActive(element){
+  function clearActive(element) {
     element.classList.remove("active");
   }
 /**
@@ -53,8 +52,8 @@
  * @description this function use to hide or show element
  */
 // code here...
-  function setVisible(element, visible){
-    if(visible){
+  function setVisible(element, visible) {
+    if(visible) {
       element.style.display = "block";
     }else {
       element.style.display = "none";
@@ -67,18 +66,19 @@
  */
 // code here...
   function addItem(item) {
-    const displayHTML = `
-      <li> <i class="material-icons"> radio_button_checked </i> ${item}</li>
+let items="";
+   items = `
+    <li> <i class="material-icons">radio_button_checked</i> ${item} </li>
     `;
-    listElement.insertAdjacentHTML("beforebegin", displayHTML);
+    listElement.insertAdjacentHTML("beforeend", items);
   }
-  document.addEventListener("keyup", event => {
-    const inputValue = addInput.value;
-    if(event.key === "Enter") {
+  document.addEventListener("keyup", event =>{
+    let inputValue = addInput.value;
+    if(event.key === "Enter"){
       if(inputValue != "") {
         limitItem();
         addItem(inputValue);
-        clearInput();
+        clearInput() ;
       }
     }
   })
@@ -87,17 +87,14 @@
  * @description this function use to clear text from add input
  */
 // code here...
-  function clearInput() {
-    addInput.value = "";
-  }
+function clearInput() {
+  addInput.value = "";
+}
 /**
  * @function filterList
  * @description this function use to filter list information when keyup event happen
  */
-
-// code here...
-function filterList() {
-  
+  function filterList(){
     const FILTER_NOT_FOUND = -1;
     const items = document.querySelectorAll("li");
     const filter = filterInput.value.toUpperCase();
@@ -111,27 +108,22 @@ function filterList() {
         items[i].style.display = "none";
       }
     }
-}
-document.addEventListener("keyup", filterList);
+  }
+// code here...
+
 
 /**
- * @array : colorsList
+ * @array : imageBackground
  */
-const colorsList = [
-    "linear-gradient(90deg, #ffffe5, #f7fcc4, #e4f4ac, #c7e89b, #a2d88a, #78c578, #4eaf63, #2f944e, #15793f, #036034, #036034)",
-    "linear-gradient(90deg, #fff7f3, #fde4e1, #fccfcc, #fbb5bc, #f993b0, #f369a3, #e03f98, #c11889, #99037c, #710174, #710174)",
-    "linear-gradient(90deg, #ffffe5, #fff8c4, #feeba2, #fed676, #febb4a, #fb9a2c, #ee7919, #d85b0a, #b74304, #8f3204, #8f3204)",
-    "linear-gradient(90deg, #f7fcf0, #e5f5df, #d4eece, #bde5bf, #9fd9bb, #7bcbc4, #58b7cd, #399cc6, #1e7eb7, #0b60a1, #0b60a1)",
-    "linear-gradient(90deg, #6e40aa, #6154c8, #4c6edb, #368ce1, #24aad8, #1ac7c2, #1ddea3, #30ee83, #52f667, #7ef658, #7ef658)"
-];
+const imageBackground = [ "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"];
 /**
- * @function randomColor
+ * @function randomImage
  * @description this function use to random the color when we click on add button or filter button and change the background of body
  */
 // code here...
-  function randomColor() {
-    let indexColor = Math.floor(Math.random() * colorsList.length)
-    document.body.style.background = colorsList[indexColor];
+  function randomImage() {
+    let randomImages = Math.floor(Math.random() * imageBackground.length);
+    document.getElementById("add").src = imageBackground[randomImages];
   }
  /**
   * @function limitItem
@@ -140,8 +132,13 @@ const colorsList = [
   */
 // code here ...
   function limitItem() {
-    const items = document.querySelectorAll("li");
-    if(items.length > 9) {
-      alert("Sorry !! you cannot add items more than 10");
+    if(addItem > 9){
+      alert("Sorry you could not add more items!!");
     }
   }
+/**
+ * @function firstCharNotNumber
+ * @param {*} text
+ * @description this function use to check the first number is not a number
+ * @hint you need to use : isNaN to check is not number 
+ */
